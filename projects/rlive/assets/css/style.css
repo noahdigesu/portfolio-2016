@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins";
+  font-weight: 400;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  background-color: transparent;
+  color: white;
+}
+
+/*.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/
+.player {
+  margin-left: 30px;
+  text-align: center;
+  background: #282828;
+  padding: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+  display: inline-block;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.player .state i {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  color: white;
+  -webkit-transform: rotatez(0) scale(2.5);
+          transform: rotatez(0) scale(2.5);
+  -webkit-transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.player:hover {
+  background: #323232;
+}
+
+.player:hover i {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.outside {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3em;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hovered {
+  -webkit-animation: anim .7s ease-out both;
+          animation: anim .7s ease-out both;
+}
+
+.unhovered {
+  -webkit-animation: anim2 .7s ease-out both;
+          animation: anim2 .7s ease-out both;
+}
+
+.roll {
+  -webkit-animation: anim3 2s infinite linear both;
+          animation: anim3 2s infinite linear both;
+}
+
+@-webkit-keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translatex(20%);
+            transform: translatex(20%);
+  }
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translatex(20%);
+            transform: translatex(20%);
+  }
+}
+
+@-webkit-keyframes anim2 {
+  0% {
+    opacity: 1;
+    -webkit-transform: translatex(20%);
+            transform: translatex(20%);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes anim2 {
+  0% {
+    opacity: 1;
+    -webkit-transform: translatex(20%);
+            transform: translatex(20%);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes anim3 {
+  from {
+    -webkit-transform: rotateZ(0deg) scale(2.5);
+            transform: rotateZ(0deg) scale(2.5);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg) scale(2.5);
+            transform: rotateZ(360deg) scale(2.5);
+  }
+}
+
+@keyframes anim3 {
+  from {
+    -webkit-transform: rotateZ(0deg) scale(2.5);
+            transform: rotateZ(0deg) scale(2.5);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg) scale(2.5);
+            transform: rotateZ(360deg) scale(2.5);
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,289 @@
+// ! CSS FONT
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
+
+// ! RESET
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+
+// ! VARIABLES
+$background: #182a3a;
+$darker: #142330;
+$purple: #8f49d5;
+
+@mixin centered {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+// ! BASE
+::selection {
+    background-color: rgba(143, 73, 213, .7);
+    color: white;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $background;
+  color: white;
+
+  @include centered;
+
+  width: 100vw;
+  height: 100vh;
+  
+  overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+}
+
+
+// ! FORM
+form#game {
+
+    span {
+        
+        cursor: pointer;
+        background-color: $purple;
+        padding: 10px 25px;
+        margin-right: 30px;
+        letter-spacing: 2px;
+        border: 2px solid $purple;
+        font-size: .9em;
+        transition: background-color .7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    .answerContainer {
+        
+        content: '';
+        padding: 50px 30% 50px 50px;
+        margin: 10px 0 50px 0;
+        background-color: $darker;
+        display: inline-block;
+        position: relative;
+
+        .game-ui {
+            
+            cursor: pointer;
+            letter-spacing: 0;
+            
+            position: absolute;
+            top: -10px;
+
+            border-radius: 100%;
+            background-color: $purple;
+
+            &:hover {
+                background-color: transparent;
+            }
+
+        }
+
+        .info {
+
+            padding: 5px 12px;
+            right: -10px;
+
+        }
+    }
+}
+
+
+// ! BUTTON
+button {
+
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 2px solid $purple;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    font-size: .9em;
+    transition: background-color .7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+        background-color: $purple;
+    }
+}
+
+
+// ! RESULT ANIMATION ELEMENTS
+.result {
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background-color: $purple;
+    z-index: 99;
+    transform: translateY(-120vh);
+
+    .container {
+        
+        width: 100vw;
+        height: 100vh;
+        margin: 10vh 0;
+        font-size: 3em;
+
+        @include centered;
+
+        #won {
+            letter-spacing: 3px;
+            font-size: .3em;
+            border: 2px solid white;
+            opacity: 0;
+
+            &:hover {
+
+                background-color: white;
+                color: $purple;
+
+            }
+        }
+
+    }
+}
+
+
+// ! INFO PANNEL
+.info-pannel {
+
+    position: absolute;
+    bottom: 30px;
+    left: 26.5vw;
+
+    p {
+        padding: 20px 50px;
+        background-color: $purple;
+        cursor: default;
+        transform: translateY(200%);
+    }
+}
+
+
+// ! LOADING ANIMATION ELEMENTS
+.load {
+
+    .pannel {
+
+        content: '';
+    
+        height: 120vh;
+        width: 100vw;
+    
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+
+    .black {
+
+        background-color: $darker;
+        animation: load 1s .4s cubic-bezier(0.22, 1, 0.36, 1) both;
+        z-index: 99;
+
+    }
+
+    .purple {
+
+        background-color: $purple;
+        animation: load 1s .6s cubic-bezier(0.22, 1, 0.36, 1) both;
+        z-index: 98;
+
+    }
+}
+
+
+// ! ANIMATIONS
+.infoAnimation {
+    animation: slideBottom 4s cubic-bezier(0.64, 0, 0.78, 0) both;
+}
+
+.resultAnimation {
+    animation: result 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.wonAnimation {
+    animation: won 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.wonButtonAnimation {
+    animation: wonButtonAnimation 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+
+
+// ! KEYFRAMES
+@keyframes load {
+    from {transform: translateY(0);}
+    to {transform: translateY(140vh);}
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(200%);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+@keyframes result {
+
+    0% {
+        transform: translateY(-140vh);
+    }
+    
+    45% {
+        transform: translateY(0);
+    }
+
+    55% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(140vh);
+    }
+
+}
+
+@keyframes won {
+
+    from {transform: translateY(-140vh);}
+    to {transform: translateY(0);}
+
+}
+
+@keyframes wonButtonAnimation {
+
+    0% {opacity: 0; filter: blur(4px);}
+    80% {filter: blur(0);}
+    100% {opacity: 1;}
+
+}

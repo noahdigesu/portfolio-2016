@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+        <title>The smart linguist - Jeu</title>
+    </head>
+    
+    <body>
+
+        <h1>"THE SMART LINGUIST"</h1>
+        <p id="exerciceChoice" style="font-style: italic;"></p>
+
+        <form id="game">
+
+            <p id="currentSentence" style="margin-top: 50px;"></p>
+
+            <div class="answerContainer">
+                
+                <!-- selected spans will appear here -->
+
+                <span class="game-ui info">?</span>
+            </div>
+            <div class="choicesContainer">
+                
+                <!-- possible choices will appear here (as spans) -->
+
+            </div>
+            <button>Vérifier</button>
+
+        </form>
+
+        <div class="result">
+            <div class="container">
+                <h2>GREAT JOB!</h2>
+
+                <button id="won" onclick="window.location.href = 'index.html';">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <div class="info-pannel">
+            <p>Cliquez sur un mot pour le placer dans la réponse (à la suite). Cliquez sur un mot de la réponse pour l'enlever.</p>
+        </div>
+
+        <div class="load">
+            <div class="pannel purple"></div>
+            <div class="pannel black"></div>
+        </div>
+
+        <script src="assets/js/jquery-3.4.1.min.js"></script>
+        <script src="assets/js/data.js"></script>
+        <script src="assets/js/jeu.js"></script>
+    </body>
+</html>

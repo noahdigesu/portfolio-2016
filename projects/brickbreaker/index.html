@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Brick breaker</title>
+  </head>
+
+  <body>
+    <article class="game">
+      <img src="images/mute-sounds.png" alt="mute-sounds" class="mute sounds"/>
+      <img src="images/mute-music.png" alt="mute-music" class="mute music"/>
+      <div class="start-game">
+        <div class="title-container">
+          <h1>BRICK BREAKER</h1>
+        </div>
+
+        <span class="start"
+          ><span>INSERT COIN</span> <img src="https://i.ibb.co/9yYKPL8/giphy.gif" alt="coin"
+        /></span>
+      </div>
+
+      <div id="started-game">
+        <div id="board">
+          <span id="score">score: 0</span>
+          <span id="level">level: 1</span>
+          <span id="lives">lives: 3</span>
+        </div>
+
+        <span id="life-lost">OUCH!</span>
+      </div>
+    </article>
+
+    <audio id="theme-song" loop src="sounds/theme-song.mp3" style="display: none;"></audio>
+    <audio id="level-up" src="sounds/level-up.wav" style="display: none;"></audio>
+    <audio id="game-start" src="sounds/game-start.wav" style="display: none;"></audio>
+    <audio id="game-lost" src="sounds/game-lost.wav" style="display: none;"></audio>
+    <audio id="game-over" src="sounds/game-over.wav" style="display: none;"></audio>
+    <audio id="touched-bottom" src="sounds/touched-bottom.wav" style="display: none;"></audio>
+    <audio id="touched-paddle" src="sounds/touched-paddle.wav" style="display: none;"></audio>
+    <audio id="touched-brick" src="sounds/touched-brick.wav" style="display: none;"></audio>
+
+    <script src="assets/js/jquery-3.5.0.min.js"></script>
+    <script src="assets/js/visuals.js"></script>
+    <script src="assets/js/model/Const.js"></script>
+    <script src="assets/js/model/Sprite.js"></script>
+    <script src="assets/js/model/Dimension.js"></script>
+    <script src="assets/js/model/Paddle.js"></script>
+    <script src="assets/js/model/Position.js"></script>
+    <script src="assets/js/model/Movement.js"></script>
+    <script src="assets/js/model/Ball.js"></script>
+    <script src="assets/js/model/Brick.js"></script>
+    <script src="assets/js/model/Bonus.js"></script>
+    <script src="assets/js/model/Player.js"></script>
+    <script src="assets/js/model/Level.js"></script>
+    <script src="assets/js/model/Game.js"></script>
+    <script src="assets/js/view/View.js"></script>
+    <script src="assets/js/audio/Audio.js"></script>
+    <script src="assets/js/ctrl/PaddleCtrl.js"></script>
+    <script src="assets/js/ctrl/BallCtrl.js"></script>
+    <script src="assets/js/ctrl/GameCtrl.js"></script>
+
+    <!--
+            ! TEST 1
+        <script>
+            let paddle = new Paddle(864);
+            let view = new View();
+            view.displayPaddle(paddle);
+            alert("Prêt à bouger la raquette à gauche ?");
+            paddle.moveTo(20);
+            view.displayPaddle(paddle);
+        </script>-->
+
+    <script>
+      let game = new Game(2);
+      let view = new View;
+      let audio = new Audio;
+      let gameCtrl = new GameCtrl(game, view, audio);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+// -- CSS FONT
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#card {
+  display: block;
+  content: '';
+  height: max-content;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 50px 50px 80px 50px;
+  transform: translate(-50%, -50%);
+  border-radius: 45px;
+  background: white;
+  box-shadow: 20px 20px 60px #d9d9d9, 
+              -20px -20px 60px #ffffff;
+  
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  
+  img {
+    border-radius: 27px;
+  }
+  
+  #infos {
+    
+    letter-spacing: 1px;
+    cursor: default;
+    margin-top: 60px;
+    user-select: none;
+    
+    #title {
+      font-weight: 600;
+      color: #B5B5B5;
+      text-transform: uppercase;
+    }
+    #artist {
+      font-weight: 300;
+      color: #C8C8C8;
+      font-size: .9em;
+    }
+  }
+  
+  #time {
+    
+    margin-top: 20px;
+    
+    span {
+      color: #C8C8C8;
+      vertical-align: middle;
+      margin-right: 15px;
+      font-size: .9em;
+      
+      &:last-of-type {
+        margin-left: 15px;
+        margin-right: 0;
+      }
+    }
+    
+    #bar {
+      display: inline-block;
+      content: '';
+      width: 65%;
+      height: 6px;
+      background-color: #F4F4F4;
+      margin: 0 auto;
+      position: relative;
+      
+      &::after {
+        
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        background-color: #d8d8d8;
+        width: 30%;
+        height: 100%;
+      }
+    }
+  }
+  
+  #controls {
+    
+    margin-top: 40px;
+    
+    .status {
+      content: '';
+      cursor: pointer;
+      background: url("https://i.ibb.co/Vt4BrTZ/play.png") no-repeat center center;
+      background-size: 20%;
+      padding: 15px 25px;
+      background-color: #FDB8B8;
+      border-radius: 100%;
+      
+      &.pause {background-image: url("https://i.ibb.co/sbN2sQN/pause.png");}
+    }
+    
+    .skip {
+      content: '';
+      background: url('https://i.ibb.co/JmYrfBn/Skip-left.png') no-repeat center center;
+      background-size: 50%;
+      padding: 10px 27px;
+      cursor: pointer;
+      
+      &.last {
+        margin-right: 22px;
+      }
+      &.next {
+        background-image: url('https://i.ibb.co/svvHQHC/Skip-right.png');
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+// -- WATER MARK
+.water-mark {
+  a {
+    position: absolute;
+    bottom: 30px; right: 30px;
+    
+    img {
+      width: 170px; height: auto;
+      filter: invert(1);
+      opacity: .2;
+    }
+  }
+}

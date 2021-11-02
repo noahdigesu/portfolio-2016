@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/jeu.css" type="text/css">
+        <title>Memory - Noah Di Gesu</title>
+    </head>
+    
+    <body>
+
+        <header>
+            <h1><span>MEMORY</span></h1>
+        </header>
+
+        <article>
+
+            <div id="sequence">
+                <button class="selection">?</button><!--
+                --><button class="selection">?</button><!--
+                --><button class="selection">?</button><!--
+                --><button class="selection">?</button><!--
+                --><button class="selection">?</button><!--
+                --><button class="selection">?</button><!--
+                --><button class="selection">?</button>
+            </div>
+            
+
+            <button id="start" onclick="startGame();">GAME ON!</button>
+
+        </article>
+
+        <aside>
+            <p>total number of games: 0</p>
+            <p>total number of wins: 0</p>
+            <p>total number of losses: 0</p>
+        </aside>
+
+        <div class="tries">
+            <p>You have 3 tries left</p>
+        </div>
+
+        <div class="container">
+            <div class="status">
+                <h2>YOU'VE LOST :(</h2>
+            </div>
+        </div>
+        
+    
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <script src="assets/js/jeu.js"></script>
+    </body>
+</html>

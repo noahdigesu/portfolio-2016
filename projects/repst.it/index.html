@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repst.it</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <header>
+        <div id="title">
+          <h1>Repst<span>.</span>it</h1>
+        </div>
+        <div id="search">
+            <input
+              type="text"
+              name="searchField"
+              id="searchField"
+              placeholder="Enter the URL of a public post..."
+              maxlength="70"
+            />
+        </div>
+      </header>
+
+      <article>
+        <img
+          src="images/undraw_Social_life_re_x7t5.svg"
+          alt="Illustration"
+          id="illustration"
+        />
+        <div id="fetchedImages">
+          <!-- will be displayed here -->
+        </div>
+        <div id="selectedImages">
+          <!-- will be displayed here -->
+        </div>
+        <p id="instructions">
+          Enter a post’s URL and select which<br />pictures to share
+        </p>
+        <a href="https://instagram.com/" class="button" target="_blank" id="dl">
+          OPEN INSTAGRAM</a
+        >
+      </article>
+
+      <footer>
+        <p>
+          made with 💜 by
+          <a href="https://noahdigesu.com/" target="_blank">noah di gesu</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="assets/js/filesaver.js"></script>
+    <script src="assets/js/jszip.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

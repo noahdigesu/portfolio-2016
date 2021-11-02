@@ -1,0 +1,164 @@
+// IMPORTANT: If you are looking for a plain CSS code, convert this one using https://jsonformatter.org/scss-to-css
+// Enjoy :)
+
+//! -- CSS FONT
+@import url("https://fonts.googleapis.com/css?family=PT+Mono");
+
+//! -- RESET
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  text-rendering: optimizeLegibility;
+  font-family: "PT Mono";
+}
+
+//! -- VARIABLES
+$red: #ff7d85;
+$dark: #282c34;
+
+//! -- GENERAL
+::selection {background-color: #c0cde5;color: $dark;}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background: $red;
+  overflow: hidden;
+  transition: background 0.2s ease-out;
+}
+
+//! -- STYLING
+textarea {
+  border: none;
+  outline: none;
+  outline-color: transparent;
+  background-color: $dark;
+  border-radius: 15px;
+  padding: 4em;
+  height: 15em;
+  width: 25em;
+  text-align: left;
+  color: #ffda7d;
+  transition: color 0.2s ease-out;
+}
+.popIn {animation: popIn 0.7s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;}
+.popOut {animation: popOut 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;}
+
+#tip {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  width: max-content;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1em 1.5em;
+  border-radius: 7px;
+  cursor: default;
+  color: $dark;
+  opacity: 0;
+  font-size: 0.9em;
+  transition: transform 0.2s cubic-bezier(0, 0.55, 0.45, 1),
+    opacity 0.2s cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.button {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 1;
+  top: 20px;
+  border-radius: 100%;
+  background: white;
+  cursor: pointer;
+
+  &.close {background: #ff5f56; left: 20px;}
+  &.minimize {background: #ffbd2e; left: 40px;}
+  &.maximize {background: #27c93f; left: 60px;}
+}
+
+#body-color {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  content: "";
+  z-index: 2;
+  padding: 0.7em 0.4em 0.4em 0.4em;
+  border-radius: 7px;
+  animation: swing-bottom-bck 0.8s 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+
+  span {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: $red;
+    z-index: 3;
+    display: inline-block;
+    margin: 0 6px;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &#purple {background: #d07de7;}
+    &#yellow {background: #ffda7d;}
+    &#brown {background: #dba169;}
+    &#blue {background: #94caf9;}
+  }
+}
+
+// -- KEYFRAMES
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    pointer-events: none;
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    pointer-events: all;
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    pointer-events: all;
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+    pointer-events: none;
+  }
+}
+
+@keyframes swing-bottom-bck {
+  0% {
+    opacity: 0;
+    transform: rotateX(0);
+    transform-origin: bottom;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(180deg);
+    transform-origin: bottom;
+  }
+}

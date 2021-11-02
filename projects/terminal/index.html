@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Terminal</title>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="popIn">
+
+        <span class="button close"></span><span class="button minimize"></span><span class="button maximize"></span>
+        
+        <textarea autofocus style="resize: none;" onkeyup="checkText(this.value);"></textarea>
+
+        <div id="tip">
+          <p>TIP! Enter a color in the terminal to change the font color!</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="body-color">
+      <span id="yellow"></span><span id="brown"></span><span id="default"></span><span id="purple"></span><span id="blue"></span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

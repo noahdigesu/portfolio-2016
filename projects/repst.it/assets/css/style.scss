@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700,600,500,400,300");
+
+$dark-black: #2d2f34;
+$light-grey: #908787;
+$lighter-grey: #bcbcbc;
+$purple: #b566d1;
+
+$b-rad: 25px;
+
+::selection {
+  color: white;
+  background-color: rgba(181, 102, 209, 0.534);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  image-rendering: optimizeQuality;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 0.75em;
+  overflow: hidden;
+}
+
+div#content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas:
+    "header"
+    "article"
+    "footer";
+}
+
+.button {
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  color: white;
+  background: $purple;
+  border-radius: $b-rad;
+  padding: 15px 35px;
+}
+
+header {
+  grid-area: header;
+  justify-self: center;
+  align-self: end;
+  width: 25em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "title search";
+  div#title {
+    grid-area: title;
+    justify-self: left;
+    align-self: center;
+    width: 100%;
+    transition: 0.6s transform cubic-bezier(0.22, 1, 0.36, 1);
+
+    h1 {
+      font-size: 1.7em;
+      font-weight: 600;
+      color: $dark-black;
+      text-align: left;
+      margin: 30px 0 20px 0;
+      span {
+        color: $purple;
+      }
+    }
+  }
+  div#search {
+    text-align: right;
+    grid-area: search;
+    justify-self: right;
+    align-self: center;
+    width: 100%;
+
+    input[type="text"] {
+      cursor: pointer;
+      color: #434857;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 0.9em;
+      border-radius: $b-rad;
+      border: 0.2em solid $lighter-grey;
+      padding: 15px 22px;
+      width: 0;
+      outline: none;
+      background: url("../../images/search.svg") no-repeat;
+      background-position: right 12px center;
+      background-size: 1.8em;
+      transition: 0.6s width cubic-bezier(0.22, 1, 0.36, 1),
+        0.6s padding cubic-bezier(0.22, 1, 0.36, 1);
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-style: italic;
+        color: $light-grey;
+      }
+    }
+  }
+}
+
+article {
+  grid-area: article;
+  justify-self: center;
+  align-self: center;
+  padding: 40px;
+
+  img {
+    min-width: 27em;
+    max-width: 27em;
+  }
+
+  p#instructions {
+    color: $light-grey;
+    // font-weight: 400; // ? hmmm
+    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    letter-spacing: 0.04em;
+  }
+
+  div#fetchedImages {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 80vw;
+    margin: 0 auto 40px auto;
+
+    div.image-container {
+      position: relative;
+      display: inline-block;
+
+      span.select {
+        z-index: 99;
+        content: url("../../images/check.svg");
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        width: 25px; // ! -> value after selection
+        height: 25px; // ! -> value after selection
+        transform: scale(0);
+        transform-origin: center;
+        border-radius: 100%;
+        background: white;
+        color: $purple;
+        transition: 0.5s transform cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      img {
+        cursor: pointer;
+        display: inline-block;
+        margin-bottom: 25px;
+        margin-right: 20px;
+        min-width: 24em;
+        max-width: 24em;
+        border-radius: 25px;
+        position: relative;
+        image-rendering: auto;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent; // ! to prevent the blue shading on mobile
+
+        &:nth-last-of-type() {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  div#selectedImages {
+    margin-bottom: 60px;
+
+    span.dot {
+      display: inline-block;
+      content: "";
+      background-color: $lighter-grey;
+      width: 7px;
+      height: 7px;
+      border-radius: 100%;
+      margin-right: 7px;
+      transform-origin: center;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &.active {
+        background-color: $purple;
+        animation: 0.3s grow cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    }
+  }
+}
+
+footer {
+  grid-area: footer;
+  margin-top: 5px;
+  justify-self: center;
+  align-self: start;
+  p {
+    color: $lighter-grey;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    a {
+      text-decoration: none;
+      color: $purple;
+    }
+  }
+}
+
+@keyframes grow {
+  from {
+    /* width: 0;
+    height: 0; */
+    transform: scale(0);
+  }
+  to {
+    /* width: 9px;
+    height: 9px; */
+    transform: scale(1);
+  }
+}

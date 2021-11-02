@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+::-moz-selection {
+  background-color: #ffe9a3;
+  color: #182a3a;
+}
+
+::selection {
+  background-color: #ffe9a3;
+  color: #182a3a;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #182a3a;
+  color: white;
+  overflow: hidden;
+}
+
+header h1 {
+  margin-bottom: 50px;
+  position: relative;
+  font-size: 2.5em;
+}
+
+header h1 span {
+  position: relative;
+  z-index: 999;
+  padding: 5px 45px 5px 55px;
+  -webkit-animation: colorChange .5s 1s ease-in-out both;
+          animation: colorChange .5s 1s ease-in-out both;
+}
+
+header h1 span::after {
+  content: '';
+  background-color: #f5d76e;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  z-index: -1;
+  -webkit-animation: bar 1s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+          animation: bar 1s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+article button {
+  cursor: default;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 10px 18px;
+  margin: 0 10px;
+  border: 2px solid #f5d76e;
+}
+
+article button:hover {
+  background-color: #f5d76e;
+  color: #182a3a;
+}
+
+article button#start {
+  cursor: pointer;
+  background-color: #f5d76e;
+  color: #182a3a;
+  display: block;
+  max-width: 100px;
+  margin: 0 auto;
+  margin-top: 50px;
+  -webkit-transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+article button#start:hover {
+  color: white;
+  background-color: transparent;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tries {
+  position: absolute;
+  left: 38vw;
+  bottom: 30px;
+  background-color: #f5d76e;
+  color: #182a3a;
+  text-transform: uppercase;
+  padding: 15px 100px;
+  letter-spacing: 3px;
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+  cursor: default;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
+}
+
+.container .status {
+  cursor: default;
+  width: 120vw;
+  height: 100vh;
+  background-color: #f5d76e;
+  font-size: 3em;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+aside {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-align: right;
+}
+
+aside p {
+  -webkit-animation: slideRight 0.3s 2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+          animation: slideRight 0.3s 2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+aside p:nth-of-type(2) {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+
+aside p:nth-of-type(3) {
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.startAnimation {
+  -webkit-animation: start 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+          animation: start 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.statusAnimation {
+  -webkit-animation: status 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+          animation: status 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.triesAnimation {
+  -webkit-animation: slideBottom 0.5s 3s cubic-bezier(0.64, 0, 0.78, 0) both;
+          animation: slideBottom 0.5s 3s cubic-bezier(0.64, 0, 0.78, 0) both;
+}
+
+@-webkit-keyframes start {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    pointer-events: none;
+    cursor: default;
+  }
+  35% {
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  100% {
+    -webkit-transform: translateX(55vw);
+            transform: translateX(55vw);
+  }
+}
+
+@keyframes start {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    pointer-events: none;
+    cursor: default;
+  }
+  35% {
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  100% {
+    -webkit-transform: translateX(55vw);
+            transform: translateX(55vw);
+  }
+}
+
+@-webkit-keyframes status {
+  0% {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  45% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  55% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@keyframes status {
+  0% {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  45% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  55% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@-webkit-keyframes colorChange {
+  from {
+    color: white;
+  }
+  to {
+    color: #182a3a;
+  }
+}
+
+@keyframes colorChange {
+  from {
+    color: white;
+  }
+  to {
+    color: #182a3a;
+  }
+}
+
+@-webkit-keyframes bar {
+  0% {
+    width: 0;
+    height: 3px;
+  }
+  25% {
+    width: 100%;
+    height: 3px;
+  }
+  50% {
+    width: 100%;
+    height: 3px;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0);
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes bar {
+  0% {
+    width: 0;
+    height: 3px;
+  }
+  25% {
+    width: 100%;
+    height: 3px;
+  }
+  50% {
+    width: 100%;
+    height: 3px;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0);
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  from {
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideBottom {
+  from {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideBottom {
+  from {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=jeu.css.map */

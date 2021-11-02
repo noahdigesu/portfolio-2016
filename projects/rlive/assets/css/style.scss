@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  font-weight: 400;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  background-color: transparent;
+  //background-color: black;
+  color: white;
+}
+
+/*.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/
+
+.player {
+    margin-left: 30px;
+  text-align: center;
+  background: rgb(40, 40, 40);
+  padding: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+  display: inline-block;
+  transform: translateX(50%);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  
+  .state i {
+    transform-origin: center;
+    color: white;
+    transform: rotatez(0) scale(2.5);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  &:hover {
+    background: rgb(50, 50, 50);
+  }
+  
+  &:hover i {
+    transform-origin: center;
+  }
+}
+
+.outside {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3em;
+  z-index: 2;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hovered {animation: anim .7s ease-out both;}
+.unhovered {animation: anim2 .7s ease-out both;}
+.roll {animation: anim3 2s infinite linear both;}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(20%);
+  }
+}
+
+@keyframes anim2 {
+    0% {
+      opacity: 1;
+      transform: translatex(20%);
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+@keyframes anim3  {
+  from {
+    transform: rotateZ(0deg) scale(2.5);
+  }
+  to {
+    transform: rotateZ(360deg) scale(2.5);
+  }
+}

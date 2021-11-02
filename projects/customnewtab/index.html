@@ -1,0 +1,92 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+- License, v. 2.0. If a copy of the MPL was not distributed with this file,
+- You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+    <link rel="icon" type="image/png" href="icon32.png"/>
+    <link rel="localization" href="branding/brand.ftl" />
+    <style>
+        * {padding: 0; margin: 0; box-sizing: content-box; overflow: hidden;}
+        body {
+            background-color: #2a2a2e;
+        }
+        .container {
+            width: 100vw; height: 100vh;
+        }
+        .search {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .title {
+            margin-bottom: 40px;
+        }
+        #title {
+            content: "";
+            background: url("word.svg") no-repeat center center;
+            display: inline-block;
+            background-size: 172px;
+            height: 95px;
+            width: 185px;
+        }
+        #logo {
+            content: "";
+            background: url("logo.png") no-repeat center center;
+            background-size: cover;
+            display: inline-block;
+            width: 95px;
+            height: 95px;
+            margin-right: 20px;
+        }
+        #search-bar {
+            background-color: transparent;
+            border: 1px solid rgba(253, 253, 253, 0.11);
+            border-radius: 50px;
+            padding: 15px 200px 15px 30px;
+            color: lightgrey;
+            transition: border 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #search-bar:hover {
+            border: 1px solid rgba(253, 253, 253, 0.2);
+        }
+        #search-bar:focus {
+            border: 1px solid rgba(253, 253, 253, 0.25);
+        }
+    </style>
+</head>
+
+<body class="activity-stream">
+    <div class="container">
+        <div class="search">
+            <div class="title">
+                <span id="logo"></span><span id="title"></span>
+            </div>
+            <div class="search-section">
+                <input type="text" name="search" id="search-bar" autofocus placeholder="Search...">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var input = document.getElementById("search-bar");
+        input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                search();
+            }
+        }); 
+        function search() {
+            window.location.href = "https://www.google.com/search?q=" + input.value;
+        }
+    </script>
+</body>
+</html>

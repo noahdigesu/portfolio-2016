@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex">
+  <title>Lolo's website</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Dekko&display=swap" rel="stylesheet">
+  <link href='assets/css/style.css' rel="stylesheet" type="text/css">
+
+  <script src="https://kit.fontawesome.com/e73c572560.js"></script>
+</head>
+
+<body>
+  <div class="container" id="home">
+
+    <div class="info-card-container">
+
+      <div class="info-card">
+
+        <div class="info-card-left-pannel info-card-content">
+          <div class="info-card-description">
+            <h1>nice to meet you</h1>
+
+            <p id="description"><!--
+            -->Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et dolore magna aliqua.<br>Ut enim ad minim veniam, quis nostrud<br>exercitation ullamco laboris nisi ut aliquip ex<br>ea commodo consequat.<br><br>Duis aute irure dolor in reprehenderit in voluptate<br>velit esse cillum dolore eu fugiat nulla pariatur.<br><br>Excepteur sint occaecat cupidatat non proident,<br>sunt in culpa qui officia deserunt mollit anim<br>id est laborum.<!--
+          --></p>
+
+            <a href="#portfolio" class="button">MY PORTFOLIO</a>
+          </div>
+        </div>
+
+        <div class="info-card-right-pannel info-card-content">
+          <div id="profile-card">
+            <img src="images/lolo.jpg" class="profile-picture" draggable="false" alt="laura.jpg"/>
+            <h2>Laura Nickels</h2>
+
+            <div id="socials">
+              <a href="javascript:void(0)" target="_blank" class="button socials"><i class="fab fa-twitter fa-fw"></i></a><!--
+              --><a href="javascript:void(0)" target="_blank" class="button socials"><i class="fab fa-instagram fa-fw"></i></a><!--
+              --><a href="javascript:void(0)" target="_blank" class="button socials"><i class="fab fa-pinterest-p fa-fw"></i></a>
+            </div>
+
+            <img src="images/red-stroke.png" class="brush-stroke" alt=""/>
+            <img src="images/red-stroke.png" class="brush-stroke" alt=""/>
+          </div>
+        </div>
+
+        <span class="copyrights"><a href="https://www.noahdigesu.com" target="_blank">&copy; Noah Di Gesù</a></span>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="portfolio">
+
+    <div class="info-card-container">
+
+      <div class="info-card">
+
+        <h1 class="portfolio-title">my portfolio</h1> <!-- card title -->
+
+        <a href="#home" class="button back"><i class="fas fa-long-arrow-alt-left fa-fw"></i></a> <!-- back to home arrow -->
+
+        <nav>
+          <ul id="buttons-container">
+            <li><button class="filter active" onclick="filterSelection('all')">A L L</button></li><!--
+            --><li><button class="filter" onclick="filterSelection('drawings')">D R A W I N G S</button></li><!--
+            --><li><button class="filter" onclick="filterSelection('paintings')">P A I N T I N G S</button></li><!--
+            --><li><button class="filter" onclick="filterSelection('sculptures')">S C U L P T U R E S</button></li>
+          </ul>
+        </nav>
+
+        <div class="info-card-full info-card-content">
+
+          <div id="gallery">
+
+            <img src="images/portfolio/drawing1.jpg" class="filter-image drawings" style="width: 100%;" alt="drawing1.jpg"/><!--
+            --><img src="images/portfolio/painting1.jpg" class="filter-image paintings" style="width: 100%;" alt="painting1.jpg"/><!--
+            --><img src="images/portfolio/sculpture2.jpg" class="filter-image sculptures" style="width: 100%;" alt="sculpture1.jpg"/><!--
+            --><img src="images/portfolio/sculpture1.jpg" class="filter-image sculptures" style="width: 100%;" alt="sculpture2.jpg"/>
+
+            <div id="slider-controls">
+              <div class="slider left">&lt;</div>
+              <div class="slider right">&gt;</div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- <div class="info-card-container">
+
+          <div class="info-card">
+
+            <h1 class="portfolio-title">my portfolio</h1>
+
+            <a href="#home" class="button back"><i class="fas fa-close fa-fw"></i></a>
+
+            <img src="images/portfolio/drawing1.jpg" class="filter-image drawings" style="width: 100%;" alt="drawing1.jpg"/>
+
+          </div>
+
+        </div> -->
+
+          <span class="copyrights"><a href="https://www.noahdigesu.com" target="_blank">&copy; Noah Di Gesù</a></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
