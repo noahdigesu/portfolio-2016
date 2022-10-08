@@ -272,22 +272,12 @@ header #bottom svg {
   opacity: 0;
 }
 
-#end img#autoportrait {
-  width: 40%;
+#end footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-48%, -57%);
-          transform: translate(-48%, -57%);
-  -webkit-user-drag: none;
-}
-
-#end footer {
-  position: absolute;
-  bottom: 2.5em;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

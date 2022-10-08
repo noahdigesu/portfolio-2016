@@ -251,20 +251,11 @@ header {
 #end {
 	opacity: 0;
 
-	img#autoportrait {
-		width: 40%;
+	footer {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-48%, -57%);
-		-webkit-user-drag: none;
-	}
-
-	footer {
-		position: absolute;
-		bottom: 2.5em;
-		left: 50%;
-		transform: translateX(-50%);
+		transform: translate3d(-50%, -50%, 0);
 		user-select: none;
 
 		#socials {

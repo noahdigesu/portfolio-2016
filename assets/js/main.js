@@ -10,9 +10,11 @@ $(window).scroll(function () {
 		$("nav").addClass("small");
 	}
 
-	if (scroll < headerPosition - 300) $("nav").removeClass("small");
+	if (scroll < headerPosition - 300) {
+		$("nav").removeClass("small");
+	}
 
-	if (scroll > autoportraitPosition - 300) $("#end").addClass("fade");
+	if (scroll > autoportraitPosition - 800) $("#end").addClass("fade");
 });
 
 $("#scrollbutton").click(function () {
